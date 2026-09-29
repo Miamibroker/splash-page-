@@ -6,7 +6,7 @@
 */
 const SITE_LINKS = {
   mortgage: "https://nationwideloansmiami.com/",
-  realEstate: "https://areaco.netlify.app/",
+  realEstate: "https://myarearealtor.com/",
   miamiLive: "" // Example later: "https://miamilivenotary.com/"
 };
 
