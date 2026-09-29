@@ -1,0 +1,211 @@
+:root{
+  --navy:#071b4a;
+  --ink:#0a1d46;
+  --muted:#4f6079;
+  --blue:#1269bf;
+  --blue-dark:#07549e;
+  --pink:#c20aa8;
+  --magenta:#d20a9a;
+  --purple:#5c22be;
+  --purple-dark:#43169c;
+  --white:#ffffff;
+  --line:#d9e3f0;
+  --card-shadow:0 24px 55px rgba(16,41,82,.12), 0 4px 15px rgba(16,41,82,.05);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:#f8fbff;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit}
+
+.page-shell{min-height:100vh;overflow:hidden}
+.hero{
+  position:relative;
+  min-height:100vh;
+  padding:28px clamp(20px,4vw,72px) 36px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.88) 34%,rgba(247,251,255,.95) 100%),
+    radial-gradient(circle at 9% 38%,rgba(18,105,191,.18),transparent 28%),
+    radial-gradient(circle at 55% 34%,rgba(210,10,154,.13),transparent 25%),
+    radial-gradient(circle at 93% 38%,rgba(92,34,190,.16),transparent 30%);
+}
+
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  left:-12%;right:-12%;
+  height:220px;
+  pointer-events:none;
+  opacity:.72;
+}
+.hero::before{
+  top:31%;
+  transform:rotate(-3deg);
+  background:linear-gradient(90deg,rgba(18,105,191,.07),rgba(210,10,154,.05),rgba(92,34,190,.07));
+  border-radius:50%;
+}
+.hero::after{
+  bottom:-125px;
+  transform:rotate(2deg);
+  background:linear-gradient(90deg,rgba(18,105,191,.05),rgba(210,10,154,.05),rgba(92,34,190,.08));
+  border-radius:50%;
+}
+
+.glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.17;pointer-events:none}
+.glow-blue{width:260px;height:260px;left:-80px;top:150px;background:var(--blue)}
+.glow-pink{width:250px;height:250px;left:43%;top:250px;background:var(--pink)}
+.glow-purple{width:300px;height:300px;right:-100px;top:180px;background:var(--purple)}
+
+.masthead,.intro,.service-grid,.trust-row{position:relative;z-index:2}
+.masthead{text-align:center;display:flex;flex-direction:column;align-items:center}
+.wordmark{
+  display:inline-flex;
+  text-decoration:none;
+  font-size:clamp(34px,4.8vw,72px);
+  line-height:.95;
+  font-weight:800;
+  letter-spacing:-.045em;
+  color:var(--navy);
+}
+.wordmark span:nth-child(2){color:#0b2d5d}
+.dot-com{font-weight:700}
+.service-line{
+  margin-top:10px;
+  font-size:clamp(11px,1.15vw,17px);
+  letter-spacing:.28em;
+  color:#283c5f;
+  font-weight:500;
+}
+.service-line span{margin:0 .35em;color:#7a88a0}
+.phone-pill{
+  margin-top:18px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  padding:8px 22px 8px 9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  border:2px solid transparent;
+  background-image:linear-gradient(#fff,#fff),linear-gradient(90deg,#95c4ff,#d50f9f,#8143df);
+  background-origin:border-box;
+  background-clip:padding-box,border-box;
+  box-shadow:0 12px 34px rgba(28,59,107,.10);
+  text-decoration:none;
+  font-size:clamp(20px,2.3vw,34px);
+  font-weight:800;
+  letter-spacing:-.02em;
+  color:var(--navy);
+}
+.phone-icon{
+  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  color:white;font-size:24px;background:linear-gradient(135deg,var(--blue),var(--purple));
+}
+
+.intro{text-align:center;margin:20px auto 28px}
+.intro h1{margin:0;font-size:clamp(32px,4.2vw,62px);line-height:1.02;letter-spacing:-.045em;font-weight:800;color:var(--navy)}
+.intro p{margin:10px 0 0;font-size:clamp(15px,1.4vw,21px);color:#445676}
+
+.service-grid{
+  max-width:1260px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;
+  align-items:stretch;
+}
+.service-card{
+  --accent:var(--blue);
+  --accent-dark:var(--blue-dark);
+  position:relative;
+  min-height:430px;
+  display:flex;flex-direction:column;align-items:center;
+  padding:42px 26px 22px;
+  border:1px solid rgba(219,229,241,.95);
+  border-radius:24px;
+  background:rgba(255,255,255,.95);
+  box-shadow:var(--card-shadow);
+  text-align:center;
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 32px 65px rgba(16,41,82,.16);border-color:color-mix(in srgb,var(--accent) 25%,white)}
+.realestate-card{--accent:var(--pink);--accent-dark:#a5088f}
+.notary-card{--accent:var(--purple);--accent-dark:var(--purple-dark)}
+.service-number{
+  position:absolute;top:-32px;left:50%;transform:translateX(-50%);
+  width:68px;height:68px;border-radius:50%;display:grid;place-items:center;
+  color:white;font-size:30px;font-weight:700;background:linear-gradient(145deg,var(--accent),var(--accent-dark));
+  border:5px solid white;box-shadow:0 8px 22px rgba(16,41,82,.18);
+}
+.logo-wrap{height:175px;width:100%;display:flex;align-items:center;justify-content:center;padding:10px}
+.logo-wrap img{display:block;max-width:100%;max-height:150px;object-fit:contain}
+.area-logo-wrap img{max-height:154px}
+.notary-logo-wrap img{max-height:136px}
+.card-copy{min-height:102px;display:flex;flex-direction:column;justify-content:center}
+.card-copy h2{margin:0;font-size:clamp(23px,2vw,31px);letter-spacing:-.035em;line-height:1.12;color:#101f42;font-weight:800}
+.card-copy p{margin:9px auto 0;max-width:340px;font-size:clamp(15px,1.2vw,19px);line-height:1.42;color:#52617a}
+.visit-btn{
+  width:100%;min-height:58px;margin-top:auto;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  border-radius:999px;border:2px solid var(--accent);
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:white;text-decoration:none;font-size:16px;font-weight:800;letter-spacing:.02em;
+  box-shadow:0 10px 22px color-mix(in srgb,var(--accent) 25%,transparent);
+  transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.visit-btn .arrow{font-size:25px;line-height:1;transition:transform .2s ease}
+.visit-btn:hover,
+.visit-btn:focus-visible{
+  background:white;
+  color:var(--accent-dark);
+  transform:translateY(-2px);
+  box-shadow:0 12px 25px rgba(13,38,78,.12);
+  outline:none;
+}
+.visit-btn:hover .arrow,.visit-btn:focus-visible .arrow{transform:translateX(5px)}
+.press-label{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:14px;color:var(--accent-dark);font-size:16px}
+.press-label span{width:52px;height:1px;background:var(--accent);opacity:.75}
+
+.trust-row{
+  max-width:1260px;margin:30px auto 0;
+  display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:24px;align-items:center;
+}
+.trust-divider{height:52px;background:#bfd0e4}
+.trust-item{display:flex;align-items:center;justify-content:center;gap:15px}
+.trust-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:white;font-size:23px;font-weight:800;box-shadow:0 8px 20px rgba(23,54,98,.13)}
+.trust-icon.blue{background:linear-gradient(145deg,var(--blue),var(--blue-dark))}
+.trust-icon.pink{background:linear-gradient(145deg,var(--pink),#8e178f);font-size:13px;letter-spacing:-2px}
+.trust-icon.purple{background:linear-gradient(145deg,var(--purple),var(--purple-dark))}
+.trust-item strong{display:block;font-size:14px;letter-spacing:.12em;color:#32445f}
+.trust-item span,.trust-item a{display:block;margin-top:5px;font-size:20px;text-decoration:none;color:#15284c;font-weight:500}
+.trust-item:first-child a{font-weight:800;color:#133064}
+
+@media (max-width:980px){
+  .hero{padding-top:24px}
+  .service-grid{grid-template-columns:1fr;max-width:620px;gap:52px}
+  .service-card{min-height:auto;padding:42px 24px 24px}
+  .logo-wrap{height:160px}
+  .card-copy{min-height:auto;margin-bottom:24px}
+  .trust-row{max-width:620px;grid-template-columns:1fr;gap:18px;margin-top:28px}
+  .trust-divider{display:none}
+  .trust-item{justify-content:flex-start;padding:0 16px}
+}
+
+@media (max-width:600px){
+  .hero{padding:22px 14px 28px}
+  .wordmark{font-size:clamp(31px,11vw,48px)}
+  .service-line{letter-spacing:.17em;line-height:1.55;padding:0 8px}
+  .phone-pill{gap:9px;padding-right:16px;font-size:22px}
+  .phone-icon{width:42px;height:42px;font-size:20px}
+  .intro{margin:20px auto 48px}
+  .intro h1{font-size:37px}
+  .intro p{font-size:15px;line-height:1.5}
+  .service-card{border-radius:20px;padding-left:18px;padding-right:18px}
+  .logo-wrap{height:150px}
+  .visit-btn{min-height:55px;font-size:14px}
+  .trust-item span,.trust-item a{font-size:18px}
+}
