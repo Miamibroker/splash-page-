@@ -120,3 +120,72 @@
 </footer>
 </body>
 </html>
+<!-- COMPACT CONTACT / SMS OPT-IN FORM -->
+<section class="mini-contact">
+  <form
+    name="miamibroker-contact"
+    method="POST"
+    data-netlify="true"
+    action="/"
+    class="mini-contact-form"
+  >
+    <input type="hidden" name="form-name" value="miamibroker-contact">
+
+    <div class="mini-contact-top">
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        aria-label="Name"
+        required
+      >
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone"
+        aria-label="Phone"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        aria-label="Email"
+      >
+
+      <select name="service" aria-label="Service">
+        <option value="">I'm interested in...</option>
+        <option value="Nationwide Loans Miami">Mortgage</option>
+        <option value="Area Co Real Estate Associates">Real Estate</option>
+        <option value="Miami Live Notary and Apostille">Notary / Apostille</option>
+      </select>
+
+      <button type="submit">Send Inquiry</button>
+
+    </div>
+
+    <label class="sms-consent">
+      <input
+        type="checkbox"
+        name="sms_consent"
+        value="Yes"
+      >
+
+      <span>
+        By checking this box, I agree to receive recurring SMS text messages
+        from MiamiBroker.com and, as applicable, Nationwide Loans Miami,
+        Área Co. Real Estate Associates, or Miami Live Notary & Apostille
+        Services regarding my inquiry, appointments, document requests,
+        transaction updates, and customer care. Message frequency varies.
+        Message and data rates may apply. Reply STOP to opt out or HELP for
+        assistance. Consent is not a condition of purchase.
+        <a href="/legal/#terms">SMS Terms</a> ·
+        <a href="/legal/#privacy">Privacy Policy</a>
+      </span>
+    </label>
+
+  </form>
+</section>
