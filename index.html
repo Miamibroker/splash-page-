@@ -1,5 +1,107 @@
 <!doctype html>
 <html lang="en">
+  <style>
+  .mini-contact {
+    width: 100%;
+    max-width: 1180px;
+    margin: 18px auto 6px;
+    padding: 0 20px;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .mini-contact-form {
+    padding: 13px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+  }
+
+  .mini-contact-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.15fr 1.35fr auto;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .mini-contact input[type="text"],
+  .mini-contact input[type="tel"],
+  .mini-contact input[type="email"],
+  .mini-contact select {
+    width: 100%;
+    height: 38px;
+    padding: 0 11px;
+    border: 1px solid #d7dce2;
+    border-radius: 7px;
+    background: #fff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+  }
+
+  .mini-contact input:focus,
+  .mini-contact select:focus {
+    border-color: #315f9b;
+  }
+
+  .mini-contact button {
+    height: 38px;
+    padding: 0 18px;
+    border: 1px solid #315f9b;
+    border-radius: 7px;
+    background: #315f9b;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .2s ease;
+  }
+
+  .mini-contact button:hover {
+    background: #ffffff;
+    color: #315f9b;
+  }
+
+  .sms-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 9px;
+    color: #6b7280;
+    font-size: 9.5px;
+    line-height: 1.45;
+  }
+
+  .sms-consent input {
+    margin-top: 2px;
+    flex: 0 0 auto;
+  }
+
+  .sms-consent a {
+    color: #315f9b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 850px) {
+    .mini-contact-top {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .mini-contact button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .mini-contact-top {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+</head>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
